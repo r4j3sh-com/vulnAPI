@@ -1,0 +1,63 @@
+{{ define "layout" }}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ .Title }}</title>
+  <meta name="description" content="{{ .Description }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a class="brand" href="/">Harbor Cloud</a>
+      <nav class="nav-links">
+        <a href="/about">About</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/portal">Portal</a>
+        <a href="/docs">Docs</a>
+      </nav>
+      <a class="nav-cta" href="/portal">Launch demo</a>
+    </div>
+  </header>
+
+  <main>
+    {{ .ContentHTML }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Harbor Cloud</h3>
+        <p>Retail telemetry and operations intelligence for teams that run on trust.</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="/about">About</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/docs">Docs</a>
+      </div>
+      <div>
+        <h4>Platform</h4>
+        <a href="/portal">Developer portal</a>
+        <a href="/docs">API reference</a>
+        <a href="/about">Security</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>hello@harbor.example</p>
+        <p>+1 (415) 555-0129</p>
+      </div>
+    </div>
+    <div class="footer-meta">Copyright (c) {{ year }} Rajesh Mondal (r4j3sh). GitHub: <a href="https://github.com/r4j3sh-com/vulnapi">github.com/r4j3sh-com/vulnapi</a></div>
+  </footer>
+
+  <script src="/assets/js/app.js"></script>
+</body>
+</html>
+{{ end }}

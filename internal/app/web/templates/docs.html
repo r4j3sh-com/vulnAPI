@@ -1,0 +1,57 @@
+{{ define "docs-content" }}
+<section class="hero compact">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">{{ .HeroTag }}</span>
+      <h1>{{ .HeroTitle }}</h1>
+      <p class="lead">{{ .HeroLead }}</p>
+      <div class="cta-row">
+        <a class="button primary" href="{{ .PrimaryLink }}">{{ .PrimaryCTA }}</a>
+        <a class="button ghost" href="{{ .SecondaryLink }}">{{ .SecondaryCTA }}</a>
+      </div>
+    </div>
+    <div class="hero-card" data-reveal>
+      <div class="status-pill">API status</div>
+      <p class="card-note">All systems operational. Median latency 42ms.</p>
+      <div class="tag-list">
+        <span>Orders</span>
+        <span>Profiles</span>
+        <span>Catalog</span>
+        <span>Ops</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="examples">
+  <div class="container">
+    <div class="section-title">
+      <h2>Endpoint overview</h2>
+      <p>Core endpoints available in the demo API.</p>
+    </div>
+    <div class="doc-grid">
+      {{ range .Docs }}
+      <article class="doc-card" data-reveal>
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Body }}</p>
+        <code>{{ .Example }}</code>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section band">
+  <div class="container split">
+    <div>
+      <h2>Need a sample payload?</h2>
+      <p>Use the quick start section in the README to run the demo locally.</p>
+    </div>
+    <div class="callout" data-reveal>
+      <p class="callout-title">Developer toolkit</p>
+      <p class="callout-body">Includes curl examples, demo users, and troubleshooting.</p>
+      <a class="link" href="/portal">Open the portal -></a>
+    </div>
+  </div>
+</section>
+{{ end }}

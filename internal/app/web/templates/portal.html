@@ -1,0 +1,44 @@
+{{ define "portal-content" }}
+<section class="hero compact">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">{{ .HeroTag }}</span>
+      <h1>{{ .HeroTitle }}</h1>
+      <p class="lead">{{ .HeroLead }}</p>
+      <div class="cta-row">
+        <a class="button primary" href="{{ .PrimaryLink }}">{{ .PrimaryCTA }}</a>
+        <a class="button ghost" href="{{ .SecondaryLink }}">{{ .SecondaryCTA }}</a>
+      </div>
+    </div>
+    <div class="hero-card" data-reveal>
+      <div class="status-pill">Developer access</div>
+      <p class="card-note">Get started with the Harbor Cloud API using the demo environment.</p>
+      <div class="login-box">
+        <label>Username</label>
+        <input type="text" placeholder="your-team" />
+        <label>Password</label>
+        <input type="password" placeholder="********" />
+        <button class="button primary">Sign in</button>
+        <p class="hint">Need access? Contact your operations admin.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Manage your integrations.</h2>
+      <p>Issue API keys, rotate secrets, and monitor delivery attempts.</p>
+    </div>
+    <div class="feature-grid">
+      {{ range .Features }}
+      <article class="feature" data-reveal>
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Body }}</p>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

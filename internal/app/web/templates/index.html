@@ -1,0 +1,113 @@
+{{ define "index-content" }}
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">{{ .HeroTag }}</span>
+      <h1>{{ .HeroTitle }}</h1>
+      <p class="lead">{{ .HeroLead }}</p>
+      <div class="cta-row">
+        <a class="button primary" href="{{ .PrimaryLink }}">{{ .PrimaryCTA }}</a>
+        <a class="button ghost" href="{{ .SecondaryLink }}">{{ .SecondaryCTA }}</a>
+      </div>
+      <div class="metrics">
+        {{ range .Metrics }}
+        <div class="metric">
+          <span class="value">{{ .Value }}</span>
+          <span class="label">{{ .Label }}</span>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    <div class="hero-card" data-reveal>
+      <div class="status-pill">Live ops snapshot</div>
+      <div class="card-grid">
+        <div>
+          <p class="card-label">Edge devices</p>
+          <h3>86%</h3>
+          <p class="card-note">Healthy right now</p>
+        </div>
+        <div>
+          <p class="card-label">Alerts</p>
+          <h3>14</h3>
+          <p class="card-note">Awaiting triage</p>
+        </div>
+        <div>
+          <p class="card-label">Orders</p>
+          <h3>3,412</h3>
+          <p class="card-note">Processed today</p>
+        </div>
+        <div>
+          <p class="card-label">Fulfillment</p>
+          <h3>98.1%</h3>
+          <p class="card-note">On-time delivery</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Everything ops teams need in one timeline.</h2>
+      <p>Bring order flow, device health, and partner access under a single operational view.</p>
+    </div>
+    <div class="feature-grid">
+      {{ range .Features }}
+      <article class="feature" data-reveal>
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Body }}</p>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section band">
+  <div class="container split">
+    <div>
+      <h2>Built for the pace of retail.</h2>
+      <p>Every API call powers a real-time view that helps teams react to disruptions before customers notice.</p>
+      <ul class="list">
+        <li>Regional routing with latency-aware failover.</li>
+        <li>Automated anomaly detection for device fleets.</li>
+        <li>Partner activity tracking with lifecycle alerts.</li>
+      </ul>
+    </div>
+    <div class="callout" data-reveal>
+      <p class="callout-title">Next 12 hours</p>
+      <p class="callout-body">12 stores forecasted above 90% capacity. Staff recommendations ready.</p>
+      <a class="link" href="/docs">See the API guide -></a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Teams trust Harbor in the moments that count.</h2>
+    </div>
+    <div class="testimonial-grid">
+      {{ range .Testimonials }}
+      <article class="testimonial" data-reveal>
+        <p>"{{ .Quote }}"</p>
+        <span>{{ .Name }}</span>
+        <em>{{ .Role }}</em>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section cta">
+  <div class="container">
+    <div class="cta-panel">
+      <div>
+        <h2>Ready to see it in action?</h2>
+        <p>Spin up the demo environment and explore the Harbor Cloud APIs.</p>
+      </div>
+      <a class="button primary" href="/portal">Start the demo</a>
+    </div>
+  </div>
+</section>
+{{ end }}

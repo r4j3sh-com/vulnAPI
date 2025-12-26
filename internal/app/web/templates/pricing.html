@@ -1,0 +1,63 @@
+{{ define "pricing-content" }}
+<section class="hero compact">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">{{ .HeroTag }}</span>
+      <h1>{{ .HeroTitle }}</h1>
+      <p class="lead">{{ .HeroLead }}</p>
+      <div class="cta-row">
+        <a class="button primary" href="{{ .PrimaryLink }}">{{ .PrimaryCTA }}</a>
+        <a class="button ghost" href="{{ .SecondaryLink }}">{{ .SecondaryCTA }}</a>
+      </div>
+    </div>
+    <div class="hero-card" data-reveal>
+      <div class="status-pill">Plan builder</div>
+      <p class="card-note">Pick a plan based on store count and workflow coverage.</p>
+      <div class="tag-list">
+        <span>Orders</span>
+        <span>Telemetry</span>
+        <span>Partners</span>
+        <span>Incident Desk</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Plans that grow with your footprint.</h2>
+      <p>Everything includes the Harbor Cloud API and developer sandbox.</p>
+    </div>
+    <div class="plan-grid">
+      {{ range .Plans }}
+      <article class="plan {{ .AccentClass }}" data-reveal>
+        <h3>{{ .Name }}</h3>
+        <p class="price">{{ .Price }}</p>
+        <p class="plan-tagline">{{ .Tagline }}</p>
+        <ul>
+          {{ range .Highlights }}
+          <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+        <a class="link" href="/portal">Request access -></a>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section band">
+  <div class="container split">
+    <div>
+      <h2>Need a custom deployment?</h2>
+      <p>We support hybrid routing, on-prem data lanes, and regional observability for large fleets.</p>
+    </div>
+    <div class="callout" data-reveal>
+      <p class="callout-title">Contact sales</p>
+      <p class="callout-body">hello@harbor.example</p>
+      <a class="link" href="/portal">Start a conversation -></a>
+    </div>
+  </div>
+</section>
+{{ end }}

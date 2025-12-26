@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  vulnapi:
+    build: .
+    ports:
+      - "9000:9000"
+    environment:
+      PORT: "9000"
+      APP_ENV: "lab"
+      DEBUG: "true"
+      TOKEN_SECRET: "dev-secret"
+      DB_PATH: "/data/vulnapi.db"
+    volumes:
+      - vulnapi-data:/data
+
+volumes:
+  vulnapi-data:

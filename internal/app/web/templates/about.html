@@ -1,0 +1,70 @@
+{{ define "about-content" }}
+<section class="hero compact">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">{{ .HeroTag }}</span>
+      <h1>{{ .HeroTitle }}</h1>
+      <p class="lead">{{ .HeroLead }}</p>
+      <div class="cta-row">
+        <a class="button primary" href="{{ .PrimaryLink }}">{{ .PrimaryCTA }}</a>
+        <a class="button ghost" href="{{ .SecondaryLink }}">{{ .SecondaryCTA }}</a>
+      </div>
+    </div>
+    <div class="hero-card" data-reveal>
+      <div class="card-grid">
+        <div>
+          <p class="card-label">Founded</p>
+          <h3>2018</h3>
+          <p class="card-note">San Francisco, CA</p>
+        </div>
+        <div>
+          <p class="card-label">Stores supported</p>
+          <h3>220+</h3>
+          <p class="card-note">Across three regions</p>
+        </div>
+        <div>
+          <p class="card-label">Ops alerts</p>
+          <h3>7K</h3>
+          <p class="card-note">Resolved monthly</p>
+        </div>
+        <div>
+          <p class="card-label">Partner teams</p>
+          <h3>38</h3>
+          <p class="card-note">Integrated vendors</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>We build with the ops floor in mind.</h2>
+      <p>Harbor Cloud was born from retail incident rooms. Our team obsesses over clarity, speed, and confidence.</p>
+    </div>
+    <div class="feature-grid">
+      {{ range .Features }}
+      <article class="feature" data-reveal>
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Body }}</p>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section band">
+  <div class="container split">
+    <div>
+      <h2>Leadership for resilient teams.</h2>
+      <p>Our leadership team has shipped platforms at large retailers, logistics companies, and payments networks.</p>
+    </div>
+    <div class="callout" data-reveal>
+      <p class="callout-title">Values</p>
+      <p class="callout-body">We believe operational clarity is the foundation of great customer experiences.</p>
+      <a class="link" href="/pricing">Explore plans -></a>
+    </div>
+  </div>
+</section>
+{{ end }}
