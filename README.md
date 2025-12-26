@@ -1,6 +1,6 @@
 # Harbor Cloud Demo API (Go)
 
-A deliberately vulnerable API lab written in Go, wrapped in a realistic storefront/ops landing page. Use it to practice API security testing and learn OWASP API Security Top 10 (2019) issues in a more authentic setting.
+A deliberately vulnerable API lab written in Go, wrapped in a realistic storefront/ops landing page. Use it to practice API security testing and learn OWASP API Security Top 10 (2019 and 2023) issues in a more authentic setting.
 
 > Warning: This app is intentionally insecure. Run it only in isolated, local environments.
 
@@ -59,7 +59,7 @@ curl -s http://localhost:9000/api/orders/1 \
 
 ## Training guide
 
-The OWASP API Top 10 mapping and sample attack flows are documented in `LAB_GUIDE.md`.
+The OWASP API Top 10 mapping (2019 and 2023) and sample attack flows are documented in `LAB_GUIDE.md`.
 
 ## Configuration
 
