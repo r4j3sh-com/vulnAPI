@@ -84,6 +84,32 @@ func passwordResetHandler(store *Store) http.HandlerFunc {
 	}
 }
 
+func dashboardHandler(store *Store) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodGet {
+			writeError(w, http.StatusMethodNotAllowed, "method not allowed")
+			return
+		}
+
+		auth, ok := requireAuth(w, r)
+		if !ok {
+			return
+		}
+
+		user, found, err := store.GetUserByID(auth.UserID)
+		if err != nil {
+			writeError(w, http.StatusInternalServerError, "failed to load user")
+			return
+		}
+		if !found {
+			writeError(w, http.StatusNotFound, "user not found")
+			return
+		}
+
+		writeJSON(w, http.StatusOK, user)
+	}
+}
+
 func usersHandler(store *Store) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		switch r.Method {

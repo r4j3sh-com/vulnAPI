@@ -12,9 +12,9 @@ func routes(store *Store, cfg Config) http.Handler {
 	mux.HandleFunc("/portal", portalPageHandler())
 	mux.HandleFunc("/docs", docsPageHandler())
 	mux.HandleFunc("/health", healthHandler)
-
 	mux.HandleFunc("/api/auth/login", loginHandler(store))
 	mux.HandleFunc("/api/auth/reset", passwordResetHandler(store))
+	mux.HandleFunc("/api/auth/dashboard", dashboardHandler(store))
 	mux.HandleFunc("/api/users", usersHandler(store))
 	mux.HandleFunc("/api/users/", userHandler(store))
 	mux.HandleFunc("/api/orders", ordersHandler(store))

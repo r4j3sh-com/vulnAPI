@@ -12,6 +12,7 @@ This guide maps the OWASP API Security Top 10 (2019 and 2023) to endpoints in th
 ### API2: Broken Authentication
 - `POST /api/auth/login` (weak tokens, no signature or expiry)
 - `POST /api/auth/reset` (no verification or rate limit)
+- `GET /api/auth/dashboard` (reflects the user identity from the token)
 
 ### API3: Excessive Data Exposure
 - `GET /api/users`
@@ -53,6 +54,7 @@ This guide maps the OWASP API Security Top 10 (2019 and 2023) to endpoints in th
 ### API2: Broken Authentication
 - `POST /api/auth/login` (weak tokens, no signature or expiry)
 - `POST /api/auth/reset` (no verification or rate limit)
+- `GET /api/auth/dashboard` (reflects the user identity from the token)
 
 ### API3: Broken Object Property Level Authorization
 - `GET /api/users` (returns password, api_key)

@@ -39,6 +39,7 @@ curl -s http://localhost:9000/api/orders/1 \
 
 - `POST /api/auth/login`
 - `POST /api/auth/reset`
+- `GET /api/auth/dashboard`
 - `GET /api/users`
 - `GET /api/users/{id}`
 - `PUT /api/users/{id}`
